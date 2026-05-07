@@ -105,7 +105,7 @@ export default function NewOrder() {
     try {
       setMenuLoading(true);
       setError("");
-      const res = await api.get<MenuItem[]>("/menu/");
+      const res = await api.get<MenuItem[]>("/menu");
       setMenuItems(res.data);
     } catch (err) {
       console.error(err);
@@ -219,7 +219,7 @@ export default function NewOrder() {
         })),
       };
 
-      const res = await api.post<OrderResponse>("/orders/", payload);
+      const res = await api.post<OrderResponse>("/orders", payload);
 
       // ✅ Snapshot BEFORE clearing the cart
       setSnapshotOrder([...currentOrder]);

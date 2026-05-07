@@ -38,7 +38,7 @@ export default function OrderHistory() {
             setLoading(true)
             setError("")
 
-            const response = await api.get("/orders/")
+            const response = await api.get("/orders")
             console.log("DATA:", response.data)
 
             setOrderHistory(response.data)

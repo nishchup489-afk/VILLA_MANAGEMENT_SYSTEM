@@ -4,7 +4,7 @@ from app.core.database import get_db
 from app.services.menu import get_menu, create_menu_item
 from app.schemas.menu import MenuItemCreate
 
-router = APIRouter(prefix="/menu/", tags=["Menu"])
+router = APIRouter(prefix="/menu", tags=["Menu"])
 
 @router.get("/")
 async def read_menu(db: AsyncSession = Depends(get_db)):

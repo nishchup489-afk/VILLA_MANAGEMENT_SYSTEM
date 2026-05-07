@@ -44,7 +44,7 @@ export default function WasteLogsPage() {
 
 
             const result = await api.get(
-                "/waste/"
+                "/waste"
             )
 
             setWasteProducts(
@@ -82,7 +82,7 @@ export default function WasteLogsPage() {
 
 
             await api.post(
-                "/waste/",
+                "/waste",
                 {
                     product_name: productName,
                     quantity: Number(quantity),
