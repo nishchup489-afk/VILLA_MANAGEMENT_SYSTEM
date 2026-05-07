@@ -38,7 +38,7 @@ const [authError, setAuthError] = useState("")
             setLoading(true)
             setError("")
 
-            const response = await api.get("/menu")
+            const response = await api.get("/menu/")
 
             console.log("RAW MENU:", response.data)
 
