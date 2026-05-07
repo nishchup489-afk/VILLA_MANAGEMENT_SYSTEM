@@ -73,14 +73,18 @@ config = context.config
 # postgresql+psycopg://
 # =========================================================
 
-config.set_main_option(
-    "sqlalchemy.url",
-    DATABASE_URL.replace(
-        "asyncpg",
-        "psycopg"
-    )
+sync_database_url = DATABASE_URL.replace(
+    "asyncpg",
+    "psycopg"
 )
 
+if "sslmode" not in sync_database_url:
+    sync_database_url += "?sslmode=require"
+
+config.set_main_option(
+    "sqlalchemy.url",
+    sync_database_url
+)
 # =========================================================
 # LOGGING CONFIG
 # =========================================================

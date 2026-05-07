@@ -17,8 +17,8 @@ app.include_router(waste_router)
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-    "https://villa-management-system.vercel.app/"
-],
+        "https://www.villa-management-system.vercel.app",
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
